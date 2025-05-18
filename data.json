@@ -48,6 +48,14 @@
         "message": "",
         "image": "",
         "file": "",
-        "casos": []
+        "casos": [
+            {
+                "title": "GITHUB PRUEBA SUBCASO 1",
+                "message": "",
+                "image": "",
+                "file": "",
+                "casos": []
+            }
+        ]
     }
 ]
