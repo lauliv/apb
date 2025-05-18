@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Guía Interactiva</title>
+  <link rel="stylesheet" href="apb.css">
+  <style>
+    .tree { list-style: none; padding-left: 20px; }
+    .tree li { margin: 5px 0; }
+    .item-header { cursor: pointer; font-weight: bold; }
+    .item-content { margin-left: 15px; display: none; }
+    .active + .item-content { display: block; }
+  </style>
+</head>
+<body>
+  <h1>Guía Paso a Paso</h1>
+  <div id="treeContainer">Cargando datos...</div>
+
+  <script>
+    // Load data.json after syncing from OneDrive
+    fetch('sync.php')
+      .then(res => {
+        if (!res.ok) throw new Error('Error sincronizando');
+        return res.text();
+      })
+      .then(() => fetch('data.json?ts=' + Date.now()))
+      .then(res => res.json())
+      .then(data => {
+        renderTree(data, document.getElementById('treeContainer'));
+      })
+      .catch(err => {
+        document.getElementById('treeContainer').textContent = 'Error al cargar los datos.';
+        console.error(err);
+      });
+
+    // Render the recursive tree structure
+    function renderTree(data, container) {
+      const ul = document.createElement('ul');
+      ul.className = 'tree';
+
+      data.forEach((item, index) => {
+        const li = document.createElement('li');
+
+        const header = document.createElement('div');
+        header.className = 'item-header';
+        header.textContent = item.title;
+        header.onclick = () => header.classList.toggle('active');
+        li.appendChild(header);
+
+        const content = document.createElement('div');
+        content.className = 'item-content';
+        content.innerHTML = item.message || '';
+        li.appendChild(content);
+
+        // Recursive sub-cases
+        if (item.casos && item.casos.length > 0) {
+          renderTree(item.casos, content);
+        }
+
+        ul.appendChild(li);
+      });
+
+      container.innerHTML = '';
+      container.appendChild(ul);
+    }
+  </script>
+</body>
+</html>

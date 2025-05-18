@@ -1,0 +1,46 @@
+[
+    {
+        "title": "PRUEBA SIN NADA",
+        "message": "<b>asxasxasxaasx<\/b>sxasxaasxsxasxaasxsxasxaasxsxasxaasx<ul><li>sxasxaasxsxasxaasx<\/li><\/ul><ol><li>sxasxaasxsxasxaasx<\/li><\/ol><a href=\"http:\/\/google.com\">sxasxaasx<\/a>sxasxaasx<img src=\"https:\/\/cdn.pixabay.com\/photo\/2024\/03\/13\/10\/00\/created-by-ai-8630676_960_720.png\">",
+        "image": "images\/6828fc02570ba_LivingstonLauraCertificado16052025.jpg",
+        "file": "files\/6828fc0257307_G-GENAI-I-m1-l2-en-file-2.en(1).pdf",
+        "casos": [
+            {
+                "title": "sub caso asasasasas",
+                "message": "asdasdasda",
+                "image": "",
+                "file": "",
+                "casos": []
+            },
+            {
+                "title": "PRUEBA 1 SUB CASO",
+                "message": "sfsdfsdfsdfsdf",
+                "image": "",
+                "file": "",
+                "casos": []
+            }
+        ]
+    },
+    {
+        "title": "CASO PRINCIPAL",
+        "message": "CASO PRINCIPAL",
+        "image": "",
+        "file": "",
+        "casos": [
+            {
+                "title": "SUB CASO PRINCIPAL",
+                "message": "ascacascas",
+                "image": "",
+                "file": "",
+                "casos": []
+            }
+        ]
+    },
+    {
+        "title": "HOLA",
+        "message": "asdas",
+        "image": "",
+        "file": "",
+        "casos": []
+    }
+]
